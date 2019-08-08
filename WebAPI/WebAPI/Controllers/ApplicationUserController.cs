@@ -5,11 +5,13 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using DomainModels.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using Repository;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
@@ -18,32 +20,29 @@ namespace WebAPI.Controllers
     [ApiController]
     public class ApplicationUserController : ControllerBase
     {
-        private UserManager<ApplicationUser> _userManager;
-        private SignInManager<ApplicationUser> _singInManager;
+        private IUnitOfWork unitOfWork;
         private readonly ApplicationSettings _appSettings;
 
-        public ApplicationUserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,IOptions<ApplicationSettings> appSettings)
+        public ApplicationUserController(IUnitOfWork unitOfWork, IOptions<ApplicationSettings> appSettings)
         {
-            _userManager = userManager;
-            _singInManager = signInManager;
+            this.unitOfWork = unitOfWork;
             _appSettings = appSettings.Value;
         }
 
         [HttpPost]
         [Route("Register")]
         //POST : /api/ApplicationUser/Register
-        public async Task<Object> PostApplicationUser(ApplicationUserModel model)
+        public async Task<Object> PostApplicationUser(UserRegistrationModel model)
         {
-            var applicationUser = new ApplicationUser() {
-                UserName = model.UserName,
-                Email = model.Email,
-                FullName = model.FullName
-            };
 
+            var isUserExists = await unitOfWork.AuthenticateRepo.IsUserExists(model.UserName);
+            if (isUserExists == true)
+                return BadRequest("User name already exists.");
             try
             {
-                var result = await _userManager.CreateAsync(applicationUser, model.Password);
-                return Ok(result);
+                var status = await unitOfWork.AuthenticateRepo.Register(model);
+                return Ok(status);
+               
             }
             catch (Exception ex)
             {
@@ -55,11 +54,11 @@ namespace WebAPI.Controllers
         [HttpPost]
         [Route("Login")]
         //POST : /api/ApplicationUser/Login
-        public async Task<IActionResult> Login(LoginModel model)
+        public async Task<IActionResult> Login(LogInModel model)
         {
-            var user = await _userManager.FindByNameAsync(model.UserName);
-            if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
+            if (await this.unitOfWork.AuthenticateRepo.Validate(model))
             {
+                var user = await this.unitOfWork.AuthenticateRepo.GetByName(model.UserName);
                 var tokenDescriptor = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[]

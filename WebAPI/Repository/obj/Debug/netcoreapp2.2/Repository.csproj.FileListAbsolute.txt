@@ -1,0 +1,14 @@
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.deps.json
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CoreCompileInputs.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfoInputs.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfo.cs
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\ApplicationCore.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\DomainModels.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\ApplicationCore.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\DomainModels.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csprojAssemblyReference.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete

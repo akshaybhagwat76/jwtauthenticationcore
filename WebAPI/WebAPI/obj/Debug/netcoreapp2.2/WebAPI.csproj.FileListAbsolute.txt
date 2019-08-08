@@ -26,3 +26,24 @@ F:\profession\CodAffection\Asp.Net Core\JWT Auth with API and Angular 7\project\
 F:\profession\CodAffection\Asp.Net Core\JWT Auth with API and Angular 7\project\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.RazorTargetAssemblyInfo.cache
 F:\profession\CodAffection\Asp.Net Core\JWT Auth with API and Angular 7\project\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.dll
 F:\profession\CodAffection\Asp.Net Core\JWT Auth with API and Angular 7\project\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.deps.json
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.runtimeconfig.json
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.runtimeconfig.dev.json
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\WebAPI.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.csprojAssemblyReference.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.csproj.CoreCompileInputs.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.RazorAssemblyInfo.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.RazorAssemblyInfo.cs
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.AssemblyInfoInputs.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.AssemblyInfo.cs
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.RazorTargetAssemblyInfo.cache
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\ApplicationCore.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\DomainModels.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\Repository.dll
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\ApplicationCore.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\DomainModels.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\bin\Debug\netcoreapp2.2\Repository.pdb
+E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\WebAPI\obj\Debug\netcoreapp2.2\WebAPI.csproj.CopyComplete

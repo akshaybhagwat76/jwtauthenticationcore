@@ -15,6 +15,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using WebAPI.Models;
+using ApplicationCore;
+using Repository;
+using Microsoft.AspNetCore.Http;
+using DomainModels.Entities;
 
 namespace WebAPI
 {
@@ -30,16 +34,20 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             //Inject AppSettings
             services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2); 
 
-            services.AddDbContext<AuthenticationContext>(options =>
+            services.AddDbContext<DatabaseContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddEntityFrameworkStores<AuthenticationContext>();
+            
+            //inject identity server
+            services.AddIdentity<User, Role>().
+               AddEntityFrameworkStores<DatabaseContext>().AddDefaultTokenProviders();
 
             services.Configure<IdentityOptions>(options =>
             {
