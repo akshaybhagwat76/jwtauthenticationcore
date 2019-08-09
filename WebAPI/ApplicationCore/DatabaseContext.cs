@@ -18,7 +18,9 @@ namespace ApplicationCore
         public DbSet<Class> Classes { get; set; }
         public DbSet<Center> Centers { get; set; }
         public DbSet<Student> Students { get; set; }
-        
+        public DbSet<Menus> Menus { get; set; }
+        public DbSet<SubMenus> SubMenus { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
