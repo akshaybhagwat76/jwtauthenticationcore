@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ApplicationCore.Migrations
 {
-    public partial class FirstInitialize : Migration
+    public partial class intial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -52,22 +52,6 @@ namespace ApplicationCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Centers",
-                columns: table => new
-                {
-                    CenterId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CenterName = table.Column<string>(maxLength: 200, nullable: false),
-                    Address = table.Column<string>(nullable: true),
-                    IsActive = table.Column<bool>(nullable: false),
-                    CreatedDate = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Centers", x => x.CenterId);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Classes",
                 columns: table => new
                 {
@@ -79,6 +63,33 @@ namespace ApplicationCore.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Classes", x => x.ClassId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Locations",
+                columns: table => new
+                {
+                    LocationId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    LocationName = table.Column<string>(maxLength: 200, nullable: false),
+                    IsActive = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Locations", x => x.LocationId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Menus",
+                columns: table => new
+                {
+                    MenuID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    MenuName = table.Column<string>(maxLength: 200, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Menus", x => x.MenuID);
                 });
 
             migrationBuilder.CreateTable(
@@ -188,6 +199,50 @@ namespace ApplicationCore.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Centers",
+                columns: table => new
+                {
+                    CenterId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    CenterName = table.Column<string>(maxLength: 200, nullable: false),
+                    Address = table.Column<string>(nullable: true),
+                    IsActive = table.Column<bool>(nullable: false),
+                    CreatedDate = table.Column<DateTime>(nullable: false),
+                    LocaionId = table.Column<int>(nullable: false),
+                    LocationId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Centers", x => x.CenterId);
+                    table.ForeignKey(
+                        name: "FK_Centers_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "LocationId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubMenus",
+                columns: table => new
+                {
+                    SubMenuID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    SubMenuName = table.Column<string>(maxLength: 200, nullable: false),
+                    MenuID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubMenus", x => x.SubMenuID);
+                    table.ForeignKey(
+                        name: "FK_SubMenus_Menus_MenuID",
+                        column: x => x.MenuID,
+                        principalTable: "Menus",
+                        principalColumn: "MenuID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Students",
                 columns: table => new
                 {
@@ -197,6 +252,8 @@ namespace ApplicationCore.Migrations
                     CenterId = table.Column<int>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     UserId = table.Column<int>(nullable: false),
+                    ClassId = table.Column<int>(nullable: false),
+                    LocationId = table.Column<int>(nullable: false),
                     CreatedDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -208,6 +265,18 @@ namespace ApplicationCore.Migrations
                         principalTable: "Centers",
                         principalColumn: "CenterId",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Students_Classes_ClassId",
+                        column: x => x.ClassId,
+                        principalTable: "Classes",
+                        principalColumn: "ClassId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Students_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
+                        principalColumn: "LocationId",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Students_AspNetUsers_UserId",
                         column: x => x.UserId,
@@ -256,14 +325,34 @@ namespace ApplicationCore.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Centers_LocationId",
+                table: "Centers",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Students_CenterId",
                 table: "Students",
                 column: "CenterId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Students_ClassId",
+                table: "Students",
+                column: "ClassId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Students_LocationId",
+                table: "Students",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Students_UserId",
                 table: "Students",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubMenus_MenuID",
+                table: "SubMenus",
+                column: "MenuID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -284,10 +373,10 @@ namespace ApplicationCore.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Classes");
+                name: "Students");
 
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "SubMenus");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -296,7 +385,16 @@ namespace ApplicationCore.Migrations
                 name: "Centers");
 
             migrationBuilder.DropTable(
+                name: "Classes");
+
+            migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Menus");
+
+            migrationBuilder.DropTable(
+                name: "Locations");
         }
     }
 }

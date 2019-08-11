@@ -1,4 +1,5 @@
-﻿using DomainModels.Entities;
+﻿using ApplicationCore.SeedData;
+using DomainModels.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -20,11 +21,10 @@ namespace ApplicationCore
         public DbSet<Student> Students { get; set; }
         public DbSet<Menus> Menus { get; set; }
         public DbSet<SubMenus> SubMenus { get; set; }
-
+        public DbSet<Location> Locations { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
             base.OnModelCreating(modelBuilder);
         }
     }

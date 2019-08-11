@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Repository.Paging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,5 +15,6 @@ namespace Repository.Abstraction
         void Modify(TEntity model);
         void Delete(TEntity model);
         void DeleteById(object Id);
+        PagedResult<TEntity> GetPaged(int pageIndex, int pageSize);
     }
 }

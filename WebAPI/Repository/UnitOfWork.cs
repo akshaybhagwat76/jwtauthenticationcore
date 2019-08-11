@@ -68,7 +68,17 @@ namespace Repository
                 return _ClassRepo;
             }
         }
+        private ILocationRepository _LocationRepo;
+        public ILocationRepository LocationRepo
+        {
+            get
+            {
+                if (_LocationRepo == null)
+                    _LocationRepo = new LocationRepository(db);
 
+                return _LocationRepo;
+            }
+        }
         public int SaveChanges()
         {
             return db.SaveChanges();

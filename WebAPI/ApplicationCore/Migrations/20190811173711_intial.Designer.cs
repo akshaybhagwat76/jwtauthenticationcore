@@ -5,19 +5,19 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ApplicationCore.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20190808100100_FirstInitialize")]
-    partial class FirstInitialize
+    [Migration("20190811173711_intial")]
+    partial class intial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -37,7 +37,13 @@ namespace ApplicationCore.Migrations
 
                     b.Property<bool>("IsActive");
 
+                    b.Property<int>("LocaionId");
+
+                    b.Property<int?>("LocationId");
+
                     b.HasKey("CenterId");
+
+                    b.HasIndex("LocationId");
 
                     b.ToTable("Centers");
                 });
@@ -57,6 +63,38 @@ namespace ApplicationCore.Migrations
                     b.HasKey("ClassId");
 
                     b.ToTable("Classes");
+                });
+
+            modelBuilder.Entity("DomainModels.Entities.Location", b =>
+                {
+                    b.Property<int>("LocationId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("LocationName")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("LocationId");
+
+                    b.ToTable("Locations");
+                });
+
+            modelBuilder.Entity("DomainModels.Entities.Menus", b =>
+                {
+                    b.Property<int>("MenuID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("MenuName")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("MenuID");
+
+                    b.ToTable("Menus");
                 });
 
             modelBuilder.Entity("DomainModels.Entities.Role", b =>
@@ -94,7 +132,11 @@ namespace ApplicationCore.Migrations
 
                     b.Property<int?>("CenterId");
 
+                    b.Property<int>("ClassId");
+
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<int>("LocationId");
 
                     b.Property<string>("StudentName")
                         .IsRequired()
@@ -106,9 +148,32 @@ namespace ApplicationCore.Migrations
 
                     b.HasIndex("CenterId");
 
+                    b.HasIndex("ClassId");
+
+                    b.HasIndex("LocationId");
+
                     b.HasIndex("UserId");
 
                     b.ToTable("Students");
+                });
+
+            modelBuilder.Entity("DomainModels.Entities.SubMenus", b =>
+                {
+                    b.Property<int>("SubMenuID")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("MenuID");
+
+                    b.Property<string>("SubMenuName")
+                        .IsRequired()
+                        .HasMaxLength(200);
+
+                    b.HasKey("SubMenuID");
+
+                    b.HasIndex("MenuID");
+
+                    b.ToTable("SubMenus");
                 });
 
             modelBuilder.Entity("DomainModels.Entities.User", b =>
@@ -251,15 +316,40 @@ namespace ApplicationCore.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("DomainModels.Entities.Center", b =>
+                {
+                    b.HasOne("DomainModels.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
+                });
+
             modelBuilder.Entity("DomainModels.Entities.Student", b =>
                 {
                     b.HasOne("DomainModels.Entities.Center", "Center")
                         .WithMany()
                         .HasForeignKey("CenterId");
 
+                    b.HasOne("DomainModels.Entities.Class", "Class")
+                        .WithMany()
+                        .HasForeignKey("ClassId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("DomainModels.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("DomainModels.Entities.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("DomainModels.Entities.SubMenus", b =>
+                {
+                    b.HasOne("DomainModels.Entities.Menus", "Menu")
+                        .WithMany()
+                        .HasForeignKey("MenuID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -53,7 +53,7 @@ namespace Repository.Implementation
 
         public async Task<IdentityResult> Register(UserRegistrationModel model)
         {
-
+            
             var user = new User
             {
                 UserName = model.UserName,
@@ -62,6 +62,7 @@ namespace Repository.Implementation
                 PhoneNumber = model.Mobile
             };
             var result = await userManager.CreateAsync(user, model.Password);
+            await userManager.AddToRoleAsync(user, "User");
             return result;
 
         }

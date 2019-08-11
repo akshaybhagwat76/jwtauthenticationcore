@@ -13,7 +13,7 @@ namespace Repository
         ICenterRepository CenterRepo { get; }
         IClassRepository ClassRepo { get; }
         IStudentRepository StudentRepo { get; }
-
+        ILocationRepository LocationRepo { get; }
         int SaveChanges();
     }
 }

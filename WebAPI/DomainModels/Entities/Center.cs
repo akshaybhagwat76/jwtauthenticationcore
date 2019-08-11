@@ -15,5 +15,7 @@ namespace DomainModels.Entities
         public bool IsActive { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
+        public int LocaionId { get; set; }
+        public virtual Location Location { get; set; }
     }
 }

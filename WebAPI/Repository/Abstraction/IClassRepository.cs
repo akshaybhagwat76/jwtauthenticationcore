@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DomainModels.Entities;
+using Repository.Paging;
 
 namespace Repository.Abstraction
 {
     public interface IClassRepository : IRepository<Class>
     {
-          
+        PagedResult<Class> GetPaged(int pageIndex, int pageSize, string search);
     }
 }

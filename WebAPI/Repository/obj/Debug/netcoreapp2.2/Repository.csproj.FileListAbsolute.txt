@@ -12,3 +12,17 @@ E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debu
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\DomainModels.pdb
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csprojAssemblyReference.cache
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.deps.json
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\Repository.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\ApplicationCore.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\DomainModels.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\ApplicationCore.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\bin\Debug\netcoreapp2.2\DomainModels.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csprojAssemblyReference.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CoreCompileInputs.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfoInputs.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.AssemblyInfo.cs
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.csproj.CopyComplete
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\Repository\obj\Debug\netcoreapp2.2\Repository.pdb

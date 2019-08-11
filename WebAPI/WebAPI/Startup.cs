@@ -19,6 +19,7 @@ using ApplicationCore;
 using Repository;
 using Microsoft.AspNetCore.Http;
 using DomainModels.Entities;
+using ApplicationCore.SeedData;
 
 namespace WebAPI
 {
@@ -85,7 +86,7 @@ namespace WebAPI
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, UserManager<User> userManager, RoleManager<Role> roleManager)
         {
 
             app.Use(async (ctx, next) =>
@@ -112,6 +113,9 @@ namespace WebAPI
             app.UseAuthentication();
 
             app.UseMvc();
+            ApplicationDbInitializer.SeedRoles(roleManager);
+            ApplicationDbInitializer.SeedUsers(userManager);
+
         }
     }
 }

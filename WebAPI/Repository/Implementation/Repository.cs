@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Repository.Paging;
 
 namespace Repository.Implementation
 {
@@ -36,6 +37,11 @@ namespace Repository.Implementation
         public TEntity GetById(object Id)
         {
             return db.Set<TEntity>().Find(Id);
+        }
+
+        public PagedResult<TEntity> GetPaged(int pageIndex, int pageSize)
+        {
+            return db.Set<TEntity>().GetPaged(pageIndex, pageSize);
         }
 
         public void Modify(TEntity model)

@@ -10,3 +10,17 @@ E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\ApplicationCore\obj
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\DomainModels.dll
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\DomainModels.pdb
 E:\Projects\jWTJwtAthentication\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.csproj.CopyComplete
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\ApplicationCore.deps.json
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\ApplicationCore.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\ApplicationCore.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\DomainModels.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\DomainModels.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.csprojAssemblyReference.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.csproj.CoreCompileInputs.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.AssemblyInfoInputs.cache
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.AssemblyInfo.cs
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.csproj.CopyComplete
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.dll
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\obj\Debug\netcoreapp2.2\ApplicationCore.pdb
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\ApplicationCore.runtimeconfig.json
+E:\Freelancer\GitRepo\jwtauthenticationcore\WebAPI\ApplicationCore\bin\Debug\netcoreapp2.2\ApplicationCore.runtimeconfig.dev.json

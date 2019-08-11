@@ -16,6 +16,10 @@ namespace DomainModels.Entities
         public int UserId { get; set; }
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
+        public int ClassId { get; set; }
+        public  virtual Class Class { get; set; }
+        public int LocationId { get; set; }
+        public virtual Location Location { get; set; }
         [Required]
         public DateTime CreatedDate { get; set; } = DateTime.Now;
     }
