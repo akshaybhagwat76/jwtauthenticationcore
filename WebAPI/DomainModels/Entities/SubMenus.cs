@@ -14,5 +14,7 @@ namespace DomainModels.Entities
         public int MenuID { get; set; }
         [ForeignKey("MenuID")]
         public virtual Menus Menu { get; set; }
+
+        public string URL { get; set; }
     }
 }

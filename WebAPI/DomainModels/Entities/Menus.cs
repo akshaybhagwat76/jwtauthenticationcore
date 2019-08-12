@@ -9,5 +9,6 @@ namespace DomainModels.Entities
         public int MenuID { get; set; }
         [Required, StringLength(200)]
         public string MenuName { get; set; }
+        public string URL { get; set; }
     }
 }
